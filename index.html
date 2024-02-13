@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocplannerGroup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+     <header class="navbar">
+        <div class="Logo">
+            <h1>
+                <a href="/">
+                    <img class="DocplannerLogo"
+                        src="data:image/png;base64,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"
+                        alt="Docplanner Group">
+                </a>
+            </h1>
+        </div>
+        <div class="navbar2">
+            <nav class="nav1">
+                <ul class="nav2">
+                    <li><a href="" class="About">About us</a></li>
+                    <li><a href="" class="Career">Career</a></li>
+                    <li><a class="Departments">Departments</a>
+                        <div class="div-dropdown">
+                            <ul>
+                                <li><a href="">Marketing & PR</a></li>
+                                <li><a href="">Customer Success & Sales</a></li>
+                                <li><a href="">IT, Product, Data</a></li>
+                                <li><a href="">Finance & Administration</a></li>
+                                <li><a href="">HR & more</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="section1 plus">
+            <img class="logo2" src="https://www.docplanner.com/img/sygnet.png"
+                srcset="https://www.docplanner.com/img/sygnet.png 1x, https://www.docplanner.com/img/sygnet@2x.png 2x">
+            <h3>Making the healthcare experience more human
+            </h3>
+        </section>
+    </main>
+    <section class="section2 plus">
+        <p>
+            We want patients to find the perfect doctor and book an <br> appointment in the most easy way. The patient
+            journey should be <br> enjoyable, and that's why we are always next to them: <br> to help them find the best
+            possible care. Anytime, anywhere.
+        </p>
+        <p>
+            We want patients to find the perfect doctor and book an <br> appointment in the most easy way. The patient
+            journey should be <br> enjoyable, and that's why we are always next to them: <br> to help them find the best
+            possible care. Anytime, anywhere.
+        </p>
+    </section>
+
+    <section class="section3 plus">
+        <div class="firstdiv">
+            <img src="">
+            <h2>For patienst</h2>
+            <h3>Find a doctor,<br> book a visit and solve any <br> health-related doubt</h3>
+            <div>
+                <div class="style-select">
+                    <select class="style-select">
+                        <option>Choose country</option>
+                        <option value="http://www.doctoraliar.com">Argentina</option>
+                        <option value="http://www.doctoralia.com.br">Brazil</option>
+                        <option value="http://www.doctoralia.cl">Chile</option>
+                        <option value="http://www.doctoralia.co">Colombia</option>
+                        <option value="http://www.znamylekar.cz">Czech</option>
+                        <option value="http://www.jameda.de">Germany</option>
+                        <option value="http://www.miodottore.it">Italy</option>
+                        <option value="http://www.doctoralia.com.mx">Mexico</option>
+                        <option value="http://www.doctoralia.pe">Peru</option>
+                        <option value="http://www.znanylekarz.pl">Poland</option>
+                        <option value="http://www.doctoralia.com.pt">Portugal</option>
+                        <option value="http://www.doctoralia.es">Spain</option>
+                        <option value="http://www.doktortakvimi.com">Turkey</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="scddiv">
+            <div class="scddiv2">
+                <img src="">
+                <h2>For doctors</h2>
+                <h3>Save time managing <br> visits and cut no- <br>shows by half</h3>
+                <div>
+                    <div class="style-select">
+                        <select class="style-select">
+                            <option>Choose country</option>
+                            <option value="https://academy.doctoraliar.com">Argentina</option>
+                            <option
+                                value="https://pro.doctoralia.com.br/produtos/sistema-de-agendamento/agenda-doctoralia-para-especialistas">
+                                Brazil</option>
+                            <option value="https://academy.doctoralia.cl">Chile</option>
+                            <option value="https://academy.doctoralia.co">Colombia</option>
+                            <option value="https://lekar.znamylekar.cz">Czech</option>
+                            <option value="https://pro.jameda.de">Germany</option>
+                            <option
+                                value="https://pro.miodottore.it/con-chi-collaboriamo/specialisti-e-medici-di-medicina-generale">
+                                Italy</option>
+                            <option
+                                value="https://pro.doctoralia.com.mx/productos/agenda-doctoralia-para-especialistas">
+                                Mexico</option>
+                            <option value="https://academy.doctoralia.pe">Peru</option>
+                            <option
+                                value="https://pro.znanylekarz.pl/produkty/oprogramowanie-medyczne/znanylekarz-dla-lekarzy">
+                                Poland</option>
+                            <option
+                                value="https://pro.doctoralia.es/productos/sistema-de-gestion-de-pacientes/doctoralia-pro-para-especialistas">
+                                Spain</option>
+                            <option value="https://uzman.doktortakvimi.com">Turkey</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="thirddiv">
+            <img src="">
+            <h2>For clinics</h2>
+            <h3>Deliver an exceptional <br> patient experience in <br> your clinic</h3>
+            <div>
+                <div class="style-select">
+                    <select class="style-select">
+                        <option>2 to 20 specialists</option>
+                        <option
+                            value="http://pro.doctoralia.com.br/produtos/sistema-de-agendamento/agenda-doctoralia-para-clinicas">
+                            Brazil</option>
+                        <option value="http://lekar.znamylekar.cz/pro-zarizeni">Czech</option>
+                        <option value="http://pro.miodottore.it/con-chi-collaboriamo/centri-medici">Italy</option>
+                        <option value="http://pro.doctoralia.com.mx/productos/agenda-doctoralia-para-clinicas">Mexico
+                        </option>
+                        <option
+                            value="http://pro.znanylekarz.pl/produkty/oprogramowanie-medyczne/znanylekarz-dla-placowek">
+                            Poland</option>
+                        <option
+                            value="http://pro.doctoralia.es/productos/sistema-de-gestion-de-pacientes/doctoralia-pro-para-clinicas">
+                            Spain</option>
+                        <option value="http://kurumsal.doktortakvimi.com">Turkey</option>
+                    </select>
+                </div>
+                <div class="style-select">
+                    <select class="style-select">
+                        <option>More than 20 specialists</option>
+                        <option value="http://tuotempo.com.br">Brazil</option>
+                        <option value="http://tuotempo.it">Italy</option>
+                        <option value="http://tuotempo.com.mx">Mexico</option>
+                        <option
+                            value="http://pro.znanylekarz.pl/produkty/oprogramowanie-medyczne/znanylekarz-dla-placowek">
+                            Poland</option>
+                        <option value="http://tuotempo.es">Spain</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </section><br><br>
+Sana
+Mannai Sana
+<section class="container">
+        <div class="section__inner">
+
+            <div class="grid">
+                <header class="col-2 stats__header">
+                    <h1>
+                        The world's biggest
+                        <br>
+                        healthcare platform
+                    </h1>
+                    <p>
+                        We work from 9 offices all over the world, bringing Docplanner Group to life in 13 countries.
+                    </p>
+                </header>
+                <div class="col-2 bigbox">
+
+                    <div class="grid stats__grid fade-elements">
+                        <div class="box1">
+                            <div class="col-2 fade-elements__visible">
+                                <div class="stats__item">
+                                    <div class="vert-align">
+                                        <div>
+                                            <img scr="https://www.docplanner.com/img/flag.png"
+                                                srcset="https://www.docplanner.com/img/flag.png 1x, https://www.docplanner.com/img/flag@2x.png 2x">
+                                            <h3>Leader in 13 countries</h3>
+                                            <p>
+                                                Poland, Brazil, Mexico, Spain, Italy, Germany, Turkey, Colombia, Czech
+                                                Republic, Portugal, Argentina, Peru and Chile
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2 fade-elements__visible">
+                                <div class="stats__item">
+                                    <div class="vert-align">
+                                        <div>
+                                            <img scr="https://www.docplanner.com/img/visits.png"
+                                                srcset="https://www.docplanner.com/img/visits.png 1x, https://www.docplanner.com/img/visits@2x.png 2x">
+                                            <h3>15,000,000 <br> appointments</h3>
+                                            <p>
+                                                booked last month
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box2">
+                            <div class="col-2 fade-elements__visible">
+                                <div class="stats__item">
+                                    <div class="vert-align">
+                                        <div>
+                                            <img scr="https://www.docplanner.com/img/patients.png"
+                                                srcset="https://www.docplanner.com/img/patients.png 1x, https://www.docplanner.com/img/patients@2x.png 2x">
+                                            <h3>90,000,000 <br> patients</h3>
+                                            <p>
+                                                visit our websites each month
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2 fade-elements__visible">
+                                <div class="stats__item">
+                                    <div class="vert-align">
+                                        <div>
+                                            <img scr="https://www.docplanner.com/img/doctors.png"
+                                                srcset="https://www.docplanner.com/img/doctors.png 1x, https://www.docplanner.com/img/doctors@2x.png 2x">
+                                            <h3>210,000<br> active doctors</h3>
+                                            <p>
+                                                trust our solutions
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <!-- cards bth -->
+
+    <br><br>
+    <section class="image-section">
+        <div class="picturs">
+            <a href="#">
+                <img src="image/warsaw.png" alt="warsaw City">
+                <div class="city-desc">
+                    <span>Warsaw</span>
+                    <button class="button
+                    ">SEE OPENNINGS</button>
+                </div>
+            </a>
+        </div>
+
+        </div>
+        <div class="picturs">
+            <a href="#">
+                <img src="image/barcelona.png" alt="Barcelona City">
+                <div class="city-desc">
+                    <span>Barcelona</span>
+                    <button class="button">SEE OPENNINGS</button>
+                </div>
+            </a>
+        </div>
+        <div class="picturs">
+            <a href="#">
+                <img src="image/istanbul.png" alt="Istanbul City">
+                <div class="city-desc">
+                    <span>Istanbul</span>
+                    <button class="button">SEE OPENNINGS</button>
+                </div>
+            </a>
+        </div>
+        <div class="picturs">
+            <a href="#">
+                <img src="image/rome.png" alt="Rome City">
+                <div class="city-desc">
+                    <span>Rome</span>
+                    <button class="button">SEE OPENNINGS</button>
+                </div>
+            </a>
+        </div>
+        <div class="picturs">
+            <a href="#">
+                <img src="image/mexico-city.png" alt="Mexico City">
+                <div class="city-desc">
+                    <span>Mexico</span>
+                    <button class="button">SEE OPENNINGS</button>
+                </div>
+            </a>
+        </div>
+        <div class="picturs">
+            <a href="#">
+                <img src="image/curitiba.png" alt="Curitiba City">
+                <div class="city-desc">
+                    <span>Mexico</span>
+                    <button class="button">SEE OPENNINGS</button>
+                </div>
+            </a>
+        </div>
+        <div class="picturs">
+            <a href="#">
+                <img src="image/curitiba.png" alt="Curitiba City">
+                <div class="city-desc">
+                    <span>Curitiba</span>
+                    <button class="button">SEE OPENNINGS</button>
+                </div>
+            </a>
+        </div>
+        <div class="picturs">
+            <a href="#">
+                <img src="image/rio-janeiro.png" alt="Curitiba City">
+                <div class="city-desc">
+                    <span>Rio janeiro</span>
+                    <button class="button">SEE OPENNINGS</button>
+                </div>
+            </a>
+        </div>
+        <div class="picturs">
+            <a href="#">
+                <img src="image/munich.png" alt="Curitiba City">
+                <div class="city-desc">
+                    <span>Munich</span>
+                    <button class="button">SEE OPENNINGS</button>
+                </div>
+            </a>
+        </div>
+        <div class="picturs">
+            <a href="#">
+                <img src="image/bologna.png" alt="Curitiba City">
+                <div class="city-desc">
+                    <span>Bologan</span>
+                    <button class="button">SEE OPENNINGS</button>
+                </div>
+            </a>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer2">
+            <p>
+                We are leaders in 10 countries:
+                <a href="" target="_blank">Poland</a>,
+                <a href="" target="_blank">Turkey</a>,
+                <a href="" target="_blank">Spain</a>,
+                <a href="" target="_blank">Italy</a>,
+                <a href="" target="_blank">Czech Republic</a>,
+                <a href="" target="_blank">Mexico</a>,
+                <a href="" target="_blank">Colombia</a>,
+                <a href="" target="_blank">Brazil</a>,
+                <a href="" target="_blank">Argentina</a>
+                and
+                <a href="#" target="_blank">Chile</a>
+            </p>
+            www.docplanner.com © 2024
+        </div>
+    </footer>
+
+
+
+
+
+</body>
+
+</html>
